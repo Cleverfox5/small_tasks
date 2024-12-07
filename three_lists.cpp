@@ -1,5 +1,4 @@
 ﻿#include <iostream>
-#include <unordered_set>
 #include <list>
 
 class ThreeAsOne {
@@ -12,10 +11,13 @@ private:
     std::list<int>::iterator first, second, third;
     std::list<int>::iterator first_end, second_end, third_end;
 
-    int ReturnValue(std::list<int>::iterator & first, std::list<int>::iterator& first_end, std::list<int>::iterator& second, std::list<int>::iterator& second_end);
+    int ReturnValue(std::list<int>::iterator & first, std::list<int>::iterator& first_end, 
+        std::list<int>::iterator& second, std::list<int>::iterator& second_end);
 };
 
-int ThreeAsOne::ReturnValue(std::list<int>::iterator& curr_first, std::list<int>::iterator& curr_first_end, std::list<int>::iterator& curr_second, std::list<int>::iterator& curr_second_end) {
+int ThreeAsOne::ReturnValue(std::list<int>::iterator& curr_first, std::list<int>::iterator& curr_first_end, 
+    std::list<int>::iterator& curr_second, std::list<int>::iterator& curr_second_end) 
+{
     if (curr_first == curr_first_end) {
         if (curr_second == curr_second_end) {
             throw std::runtime_error("The values are over");
